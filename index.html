@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>yasmine kaci chaouche</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --muted: #888;
+      --accent: #999;
+    }
+
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      min-height: 100vh;
+      cursor: default;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 2rem 2.5rem;
+      z-index: 100;
+      mix-blend-mode: multiply;
+    }
+
+    .nav-name {
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      font-family: Arial, sans-serif;
+      font-weight: 400;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--muted); }
+
+    /* SUBTITLE */
+    .subtitle {
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      margin-top: 0.3rem;
+    }
+
+    /* GALLERY */
+    .gallery {
+      padding-top: 7rem;
+      padding-bottom: 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .gallery-item {
+      position: relative;
+      width: min(600px, 90vw);
+      margin-bottom: 3.5rem;
+      cursor: pointer;
+    }
+
+    .gallery-item .image-stack {
+      position: relative;
+      width: 100%;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      position: absolute;
+      top: 0; left: 0;
+      transition: opacity 0.5s ease;
+      object-fit: cover;
+    }
+
+    .gallery-item img:first-child {
+      position: relative;
+    }
+
+    .gallery-item img.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .gallery-item img.visible {
+      opacity: 1;
+    }
+
+    .gallery-item .caption {
+      margin-top: 0.6rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* HOVER indicator */
+    .gallery-item::after {
+      content: '↻';
+      position: absolute;
+      bottom: 2rem;
+      right: 0.8rem;
+      font-size: 1rem;
+      color: var(--accent);
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+
+    .gallery-item:hover::after {
+      opacity: 1;
+    }
+
+    /* placeholder images — remplacez les src par vos vraies images */
+    .placeholder {
+      background: #e8e4dd;
+      aspect-ratio: 4/3;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div>
+      <a class="nav-name" href="#">yasmine kaci chaouche</a>
+      <p class="subtitle">a collection of works / moments</p>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#works">works</a></li>
+      <li><a href="#cv">cv</a></li>
+      <li><a href="#contact">contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="gallery" id="works">
+
+    <!-- Projet 1 : remplacez image1a.jpg et image1b.jpg par vos images -->
+    <div class="gallery-item" onclick="toggleImages(this)">
+      <div class="image-stack">
+        <div class="placeholder visible" data-index="0">image 1a — cliquez pour changer</div>
+        <div class="placeholder hidden" data-index="1" style="background:#ddd8cf;">image 1b</div>
+      </div>
+      <p class="caption">moments</p>
+    </div>
+
+    <!-- Projet 2 -->
+    <div class="gallery-item" onclick="toggleImages(this)">
+      <div class="image-stack">
+        <div class="placeholder visible" data-index="0" style="background:#e2ddd6;">image 2a — cliquez pour changer</div>
+        <div class="placeholder hidden" data-index="1" style="background:#d5cfc6;">image 2b</div>
+      </div>
+      <p class="caption">project title</p>
+    </div>
+
+    <!-- Projet 3 -->
+    <div class="gallery-item" onclick="toggleImages(this)">
+      <div class="image-stack">
+        <div class="placeholder visible" data-index="0" style="background:#dbd5cc;">image 3a — cliquez pour changer</div>
+        <div class="placeholder hidden" data-index="1" style="background:#cec8bf;">image 3b</div>
+      </div>
+      <p class="caption">project title</p>
+    </div>
+
+  </main>
+
+  <script>
+    function toggleImages(item) {
+      const images = item.querySelectorAll('.image-stack > *');
+      // find current visible
+      let currentIndex = 0;
+      images.forEach((img, i) => {
+        if (img.classList.contains('visible')) currentIndex = i;
+      });
+      const nextIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].classList.remove('visible');
+      images[currentIndex].classList.add('hidden');
+      images[nextIndex].classList.remove('hidden');
+      images[nextIndex].classList.add('visible');
+    }
+  </script>
+
+</body>
+</html>
