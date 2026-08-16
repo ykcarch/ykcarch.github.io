@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>cv — yasmine kaci chaouche</title>
+  <title>works — yasmine kaci chaouche</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -19,11 +19,18 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding: 2rem 2.5rem;
+      flex-direction: column;
+      padding: 1.5rem 2.5rem 0;
       z-index: 100;
       background: #fff;
+      border-bottom: 1px solid #eee;
+    }
+
+    .nav-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 1rem;
     }
 
     .nav-name {
@@ -53,196 +60,271 @@
 
     .nav-links a:hover { color: #888; }
 
-    .cv-page {
-      padding: 8rem 2.5rem 6rem;
-      max-width: 960px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+    /* FILTERS */
+    .filters {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 1rem;
     }
 
-    /* COL GAUCHE */
-    .col-left { display: flex; flex-direction: column; gap: 2rem; }
-
-    .info {
-      font-size: 0.78rem;
-      line-height: 1.9;
-      color: #555;
-    }
-
-    .info a {
-      color: #1a1a1a;
-      text-decoration: underline;
-    }
-
-    .skills-block { font-size: 0.78rem; line-height: 1.9; color: #1a1a1a; }
-    .skills-block strong { font-weight: 700; display: block; margin-top: 1.2rem; margin-bottom: 0.2rem; }
-    .skills-block strong:first-child { margin-top: 0; }
-
-    /* COL DROITE */
-    .col-right { display: flex; flex-direction: column; gap: 3rem; }
-
-    h2 {
+    .filter-btn {
+      font-family: Arial, sans-serif;
       font-size: 0.78rem;
       font-weight: 400;
       color: #888;
-      letter-spacing: 0.04em;
-      margin-bottom: 1rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
     }
 
-    .section { display: flex; flex-direction: column; gap: 0; }
+    .filter-btn:hover { color: #1a1a1a; }
+    .filter-btn.active { color: #1a1a1a; }
 
-    .entry {
-      font-size: 0.78rem;
-      line-height: 1.7;
-      color: #1a1a1a;
-      padding-bottom: 0.9rem;
-      margin-bottom: 0.9rem;
-      border-bottom: 1px solid #eee;
+    /* GALLERY */
+    .gallery {
+      padding-top: 10rem;
+      padding-bottom: 6rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .entry:last-child { border-bottom: none; margin-bottom: 0; }
+    .project {
+      width: min(620px, 90vw);
+      margin-bottom: 4rem;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
 
-    .entry .date {
-      color: #888;
+    .project.hidden-project {
+      display: none;
+    }
+
+    .image-stack {
+      position: relative;
+      width: 100%;
+    }
+
+    .image-stack > * {
+      width: 100%;
       display: block;
-      margin-bottom: 0.2rem;
+      transition: opacity 0.5s ease;
     }
 
-    .entry em { font-style: italic; }
+    .image-stack > *:not(:first-child) {
+      position: absolute;
+      top: 0; left: 0;
+    }
+
+    .image-stack > *.hidden { opacity: 0; pointer-events: none; }
+    .image-stack > *.visible { opacity: 1; }
+
+    .placeholder {
+      aspect-ratio: 4/3;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+    }
+
+    .project-caption {
+      margin-top: 0.6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .project-title {
+      font-size: 0.78rem;
+      color: #1a1a1a;
+    }
+
+    .project-location {
+      font-size: 0.72rem;
+      color: #888;
+    }
+
+    .project::after {
+      content: '↻';
+      position: absolute;
+      opacity: 0;
+    }
   </style>
 </head>
 <body>
 
   <nav>
-    <div>
-      <a class="nav-name" href="index.html">yasmine kaci chaouche</a>
-      <p class="subtitle">a collection of works / moments</p>
+    <div class="nav-top">
+      <div>
+        <a class="nav-name" href="index.html">yasmine kaci chaouche</a>
+        <p class="subtitle">a collection of works / moments</p>
+      </div>
+      <ul class="nav-links">
+        <li><a href="works.html">works</a></li>
+        <li><a href="cv.html">cv</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
     </div>
-    <ul class="nav-links">
-      <li><a href="index.html#works">works</a></li>
-      <li><a href="cv.html">cv</a></li>
-      <li><a href="contact.html">contact</a></li>
-    </ul>
+    <div class="filters">
+      <button class="filter-btn active" onclick="filter('all', this)">all</button>
+      <button class="filter-btn" onclick="filter('architecture', this)">architecture</button>
+      <button class="filter-btn" onclick="filter('scenography', this)">scenography & design</button>
+      <button class="filter-btn" onclick="filter('personal', this)">personal projects</button>
+    </div>
   </nav>
 
-  <main class="cv-page">
+  <main class="gallery">
 
-    <!-- COL GAUCHE -->
-    <div class="col-left">
+    <!-- ARCHITECTURE -->
 
-      <div class="info">
-        <a href="mailto:yasminekacic@gmail.com">yasminekacic@gmail.com</a><br>
-        graduated as architect Jan 2026<br>
-        ENSA PARIS BELLEVILLE<br>
-        FRANCE
+    <div class="project" data-category="architecture" onclick="toggleImages(this)">
+      <div class="image-stack">
+        <div class="placeholder visible" style="background:#e8e6e0;">okada house — image 1</div>
+        <div class="placeholder hidden" style="background:#dddbd5;">okada house — image 2</div>
       </div>
-
-      <div class="skills-block">
-        <strong>softwares & skills</strong>
-        autocad, archicad<br>
-        adobe suite<br>
-        blender, rhino, sketchup<br>
-        handmade model making
-
-        <strong>spoken languages</strong>
-        french — native<br>
-        english, spanish — bilingual<br>
-        japanese, korean — intermediate
-
-        <strong>interests</strong>
-        photography,<br>
-        writing, drawing<br>
-        volunteering
+      <div class="project-caption">
+        <span class="project-title">Okada House</span>
+        <span class="project-location">Saku, Nagano</span>
       </div>
-
     </div>
 
-    <!-- COL DROITE -->
-    <div class="col-right">
-
-      <div>
-        <h2>work experience</h2>
-        <div class="section">
-
-          <div class="entry">
-            <span class="date">Now</span>
-            Organizing a triangular student's workshop in Seoul between ENSA-PB (Paris), Hanyang University (Seoul), and Shibaura IT (Tokyo) in September 2026 in Seoul
-          </div>
-
-          <div class="entry">
-            <span class="date">July — August 2026</span>
-            Scenography museum design at <em>Helft et Pinta</em><br>
-            Competition for a temporary fashion exhibition at Palais Galliera, Paris, France
-          </div>
-
-          <div class="entry">
-            <span class="date">October 2025</span>
-            Scenography of <em>Humanitas</em> collective runway show, Paris, France
-          </div>
-
-          <div class="entry">
-            <span class="date">May — July 2025</span>
-            Internship at <em>Unemori Architects</em><br>
-            Tokyo, Japan
-          </div>
-
-          <div class="entry">
-            <span class="date">2025</span>
-            Volunteering at <em>La Corvée</em>, associative community space<br>
-            Paris, France
-          </div>
-
-          <div class="entry">
-            <span class="date">June — Août 2024</span>
-            Internship at <em>OCWA Architects</em><br>
-            Marbella, Spain
-          </div>
-
-          <div class="entry">
-            <span class="date">June — July 2023</span>
-            Internship at <em>ACP Architecture</em><br>
-            Paris, France
-          </div>
-
-        </div>
+    <div class="project" data-category="architecture" onclick="toggleImages(this)">
+      <div class="image-stack">
+        <div class="placeholder visible" style="background:#e4e2dc;">la machine du dialogue — image 1</div>
+        <div class="placeholder hidden" style="background:#d9d7d1;">la machine du dialogue — image 2</div>
       </div>
-
-      <div>
-        <h2>education</h2>
-        <div class="section">
-
-          <div class="entry">
-            <span class="date">Jan 2024 — Jan 2026</span>
-            Masters Degree in Architecture, école nationale supérieure d'architecture de paris-belleville<br>
-            Paris, France
-          </div>
-
-          <div class="entry">
-            <span class="date">Sept 2023 — Jan 2024</span>
-            Exchange semester at KTH University<br>
-            Stockholm, Sweden
-          </div>
-
-          <div class="entry">
-            <span class="date">Sept 2020 — June 2023</span>
-            Bachelor Degree in Architecture, école nationale supérieure d'architecture de paris-belleville<br>
-            Paris, France
-          </div>
-
-          <div class="entry">
-            <span class="date">June 2020</span>
-            High school graduation Baccalauréat économique et social with mentions, mathematics speciality<br>
-            Notre Dame de France highschool, Paris, France
-          </div>
-
-        </div>
+      <div class="project-caption">
+        <span class="project-title">La machine du dialogue</span>
+        <span class="project-location">Montparnasse-Maine, Paris</span>
       </div>
+    </div>
 
+    <div class="project" data-category="architecture" onclick="toggleImages(this)">
+      <div class="image-stack">
+        <div class="placeholder visible" style="background:#e0deda;">théâtre madeleine — image 1</div>
+        <div class="placeholder hidden" style="background:#d5d3cf;">théâtre madeleine — image 2</div>
+      </div>
+      <div class="project-caption">
+        <span class="project-title">Un théâtre pour la vallée de la Madeleine</span>
+        <span class="project-location">Nice, France</span>
+      </div>
+    </div>
+
+    <div class="project" data-category="architecture" onclick="toggleImages(this)">
+      <div class="image-stack">
+        <div class="placeholder visible" style="background:#dcdad4;">mer baltique — image 1</div>
+        <div class="placeholder hidden" style="background:#d1cfca;">mer baltique — image 2</div>
+      </div>
+      <div class="project-caption">
+        <span class="project-title">Un projet pour la mer Baltique</span>
+        <span class="project-location">Hanko, Finlande</span>
+      </div>
+    </div>
+
+    <div class="project" data-category="architecture" onclick="toggleImages(this)">
+      <div class="image-stack">
+        <div class="placeholder visible" style="background:#d8d6d0;">canal ourcq — image 1</div>
+        <div class="placeholder hidden" style="background:#cdcbc6;">canal ourcq — image 2</div>
+      </div>
+      <div class="project-caption">
+        <span class="project-title">Une place sur l'eau</span>
+        <span class="project-location">Canal de l'Ourcq, Paris</span>
+      </div>
+    </div>
+
+    <div class="project" data-category="architecture" onclick="toggleImages(this)">
+      <div class="image-stack">
+        <div class="placeholder visible" style="background:#d4d2cc;">corps de ferme — image 1</div>
+        <div class="placeholder hidden" style="background:#c9c7c2;">corps de ferme — image 2</div>
+      </div>
+      <div class="project-caption">
+        <span class="project-title">Habiter un corps de ferme</span>
+        <span class="project-location">Domont, Ile de France</span>
+      </div>
+    </div>
+
+    <!-- SCENOGRAPHY & DESIGN -->
+
+    <div class="project" data-category="scenography" onclick="toggleImages(this)">
+      <div class="image-stack">
+        <div class="placeholder visible" style="background:#e6e4de;">legera chaise — image 1</div>
+        <div class="placeholder hidden" style="background:#dbd9d3;">legera chaise — image 2</div>
+      </div>
+      <div class="project-caption">
+        <span class="project-title">Legera chaise</span>
+        <span class="project-location">furniture design</span>
+      </div>
+    </div>
+
+    <div class="project" data-category="scenography" onclick="toggleImages(this)">
+      <div class="image-stack">
+        <div class="placeholder visible" style="background:#e2e0da;">humanitas — image 1</div>
+        <div class="placeholder hidden" style="background:#d7d5cf;">humanitas — image 2</div>
+      </div>
+      <div class="project-caption">
+        <span class="project-title">Humanitas runway</span>
+        <span class="project-location">Paris</span>
+      </div>
+    </div>
+
+    <div class="project" data-category="scenography" onclick="toggleImages(this)">
+      <div class="image-stack">
+        <div class="placeholder visible" style="background:#dedcd6;">helft et pinta — image 1</div>
+        <div class="placeholder hidden" style="background:#d3d1cb;">helft et pinta — image 2</div>
+      </div>
+      <div class="project-caption">
+        <span class="project-title">Palais Galliera exhibition</span>
+        <span class="project-location">Helft et Pinta, Paris</span>
+      </div>
+    </div>
+
+    <!-- PERSONAL PROJECTS -->
+
+    <div class="project" data-category="personal" onclick="toggleImages(this)">
+      <div class="image-stack">
+        <div class="placeholder visible" style="background:#e0deda;">photographs — image 1</div>
+        <div class="placeholder hidden" style="background:#d5d3cf;">photographs — image 2</div>
+      </div>
+      <div class="project-caption">
+        <span class="project-title">photographs</span>
+        <span class="project-location">a collection of moments in space</span>
+      </div>
     </div>
 
   </main>
+
+  <script>
+    function filter(category, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.project').forEach(p => {
+        if (category === 'all' || p.dataset.category === category) {
+          p.classList.remove('hidden-project');
+        } else {
+          p.classList.add('hidden-project');
+        }
+      });
+    }
+
+    function toggleImages(item) {
+      const images = item.querySelectorAll('.image-stack > *');
+      let currentIndex = 0;
+      images.forEach((img, i) => {
+        if (img.classList.contains('visible')) currentIndex = i;
+      });
+      const nextIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].classList.remove('visible');
+      images[currentIndex].classList.add('hidden');
+      images[nextIndex].classList.remove('hidden');
+      images[nextIndex].classList.add('visible');
+    }
+  </script>
 
 </body>
 </html>
