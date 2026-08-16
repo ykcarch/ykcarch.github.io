@@ -7,20 +7,27 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    :root {
-      --bg: #ffffff;
-      --text: #1a1a1a;
-      --muted: #888;
-      --accent: #999;
-    }
-
     html, body {
-      background: var(--bg);
-      color: var(--text);
+      background: #fff;
+      color: #1a1a1a;
       font-family: Arial, sans-serif;
       font-size: 16px;
       min-height: 100vh;
-      cursor: default;
+      overflow: hidden;
+    }
+
+    /* SPLINE BACKGROUND */
+    .spline-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+    }
+
+    .spline-bg iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
     }
 
     /* NAV */
@@ -32,16 +39,20 @@
       align-items: flex-start;
       padding: 2rem 2.5rem;
       z-index: 100;
-      mix-blend-mode: multiply;
     }
 
     .nav-name {
       font-size: 0.85rem;
-      letter-spacing: 0.04em;
       font-family: Arial, sans-serif;
       font-weight: 400;
-      color: var(--text);
+      color: #1a1a1a;
       text-decoration: none;
+    }
+
+    .subtitle {
+      font-size: 0.75rem;
+      color: #888;
+      margin-top: 0.3rem;
     }
 
     .nav-links {
@@ -52,106 +63,21 @@
 
     .nav-links a {
       font-size: 0.85rem;
-      letter-spacing: 0.04em;
-      color: var(--text);
+      color: #1a1a1a;
       text-decoration: none;
-      transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--muted); }
-
-    /* SUBTITLE */
-    .subtitle {
-      font-size: 0.75rem;
-      color: var(--muted);
-      letter-spacing: 0.04em;
-      margin-top: 0.3rem;
-    }
-
-    /* GALLERY */
-    .gallery {
-      padding-top: 7rem;
-      padding-bottom: 4rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0;
-    }
-
-    .gallery-item {
-      position: relative;
-      width: min(600px, 90vw);
-      margin-bottom: 3.5rem;
-      cursor: pointer;
-    }
-
-    .gallery-item .image-stack {
-      position: relative;
-      width: 100%;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      display: block;
-      position: absolute;
-      top: 0; left: 0;
-      transition: opacity 0.5s ease;
-      object-fit: cover;
-    }
-
-    .gallery-item img:first-child {
-      position: relative;
-    }
-
-    .gallery-item img.hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .gallery-item img.visible {
-      opacity: 1;
-    }
-
-    .gallery-item .caption {
-      margin-top: 0.6rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-      letter-spacing: 0.04em;
-    }
-
-    /* HOVER indicator */
-    .gallery-item::after {
-      content: '↻';
-      position: absolute;
-      bottom: 2rem;
-      right: 0.8rem;
-      font-size: 1rem;
-      color: var(--accent);
-      opacity: 0;
-      transition: opacity 0.3s;
-      pointer-events: none;
-    }
-
-    .gallery-item:hover::after {
-      opacity: 1;
-    }
-
-    /* placeholder images — remplacez les src par vos vraies images */
-    .placeholder {
-      background: #e8e4dd;
-      aspect-ratio: 4/3;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--muted);
-      font-size: 0.8rem;
-      letter-spacing: 0.05em;
-    }
+    .nav-links a:hover { color: #888; }
   </style>
 </head>
 <body>
 
+  <!-- SPLINE ANIMATION -->
+  <div class="spline-bg">
+    <iframe src="https://my.spline.design/untitled-S73MpKepDp3QUSweSt7qu8lF/" allowfullscreen></iframe>
+  </div>
+
+  <!-- NAV -->
   <nav>
     <div>
       <a class="nav-name" href="#">yasmine kaci chaouche</a>
@@ -163,63 +89,6 @@
       <li><a href="contact.html">contact</a></li>
     </ul>
   </nav>
-
-  <main class="gallery" id="works">
-
-    <!-- Projet 1 : remplacez image1a.jpg et image1b.jpg par vos images -->
-    <div class="gallery-item" onclick="toggleImages(this)">
-      <div class="image-stack">
-        <div class="placeholder visible" data-index="0">image 1a — cliquez pour changer</div>
-        <div class="placeholder hidden" data-index="1" style="background:#ddd8cf;">image 1b</div>
-      </div>
-      <p class="caption">moments</p>
-    </div>
-
-    <!-- Projet 2 -->
-    <div class="gallery-item" onclick="toggleImages(this)">
-      <div class="image-stack">
-        <div class="placeholder visible" data-index="0" style="background:#e2ddd6;">image 2a — cliquez pour changer</div>
-        <div class="placeholder hidden" data-index="1" style="background:#d5cfc6;">image 2b</div>
-      </div>
-      <p class="caption">project title</p>
-    </div>
-
-    <!-- Projet 3 -->
-    <div class="gallery-item" onclick="toggleImages(this)">
-      <div class="image-stack">
-        <div class="placeholder visible" data-index="0" style="background:#dbd5cc;">image 3a — cliquez pour changer</div>
-        <div class="placeholder hidden" data-index="1" style="background:#cec8bf;">image 3b</div>
-      </div>
-      <p class="caption">project title</p>
-    </div>
-
-  </main>
-
-  <!-- CONTACT -->
-  <section id="contact" style="padding: 4rem 2.5rem; max-width: 600px; margin: 0 auto;">
-    <p style="font-size: 0.85rem; margin-bottom: 0.6rem;">
-      <a href="mailto:yasminekacic@gmail.com" style="color: var(--text); text-decoration: none;">yasminekacic@gmail.com</a>
-    </p>
-    <p style="font-size: 0.85rem;">
-      <a href="tel:+33617075901" style="color: var(--text); text-decoration: none;">06 17 07 59 01</a>
-    </p>
-  </section>
-
-  <script>
-    function toggleImages(item) {
-      const images = item.querySelectorAll('.image-stack > *');
-      // find current visible
-      let currentIndex = 0;
-      images.forEach((img, i) => {
-        if (img.classList.contains('visible')) currentIndex = i;
-      });
-      const nextIndex = (currentIndex + 1) % images.length;
-      images[currentIndex].classList.remove('visible');
-      images[currentIndex].classList.add('hidden');
-      images[nextIndex].classList.remove('hidden');
-      images[nextIndex].classList.add('visible');
-    }
-  </script>
 
 </body>
 </html>
