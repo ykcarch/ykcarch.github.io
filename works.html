@@ -19,11 +19,18 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding: 2rem 2.5rem;
+      flex-direction: column;
+      padding: 1.5rem 2.5rem 0;
       z-index: 100;
       background: #fff;
+      border-bottom: 1px solid #eee;
+    }
+
+    .nav-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 1rem;
     }
 
     .nav-name {
@@ -55,21 +62,15 @@
 
     /* FILTERS */
     .filters {
-      position: fixed;
-      top: 4.5rem;
-      left: 2.5rem;
-      right: 2.5rem;
       display: flex;
       gap: 2rem;
-      z-index: 99;
-      background: #fff;
-      padding: 0.8rem 0;
-      border-bottom: 1px solid #eee;
+      padding-bottom: 1rem;
     }
 
     .filter-btn {
       font-family: Arial, sans-serif;
       font-size: 0.78rem;
+      font-weight: 700;
       color: #888;
       background: none;
       border: none;
@@ -84,7 +85,7 @@
 
     /* GALLERY */
     .gallery {
-      padding-top: 11rem;
+      padding-top: 10rem;
       padding-bottom: 6rem;
       display: flex;
       flex-direction: column;
@@ -159,23 +160,24 @@
 <body>
 
   <nav>
-    <div>
-      <a class="nav-name" href="index.html">yasmine kaci chaouche</a>
-      <p class="subtitle">a collection of works / moments</p>
+    <div class="nav-top">
+      <div>
+        <a class="nav-name" href="index.html">yasmine kaci chaouche</a>
+        <p class="subtitle">a collection of works / moments</p>
+      </div>
+      <ul class="nav-links">
+        <li><a href="works.html">works</a></li>
+        <li><a href="cv.html">cv</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
     </div>
-    <ul class="nav-links">
-      <li><a href="works.html">works</a></li>
-      <li><a href="cv.html">cv</a></li>
-      <li><a href="contact.html">contact</a></li>
-    </ul>
+    <div class="filters">
+      <button class="filter-btn active" onclick="filter('all', this)">all</button>
+      <button class="filter-btn" onclick="filter('architecture', this)">architecture</button>
+      <button class="filter-btn" onclick="filter('scenography', this)">scenography & design</button>
+      <button class="filter-btn" onclick="filter('personal', this)">personal projects</button>
+    </div>
   </nav>
-
-  <div class="filters">
-    <button class="filter-btn active" onclick="filter('all', this)">all</button>
-    <button class="filter-btn" onclick="filter('architecture', this)">architecture</button>
-    <button class="filter-btn" onclick="filter('scenography', this)">scenography & design</button>
-    <button class="filter-btn" onclick="filter('personal', this)">personal projects</button>
-  </div>
 
   <main class="gallery">
 
