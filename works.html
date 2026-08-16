@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>works — yasmine kaci chaouche</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      background: #ffffff;
+      color: #1a1a1a;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 2rem 2.5rem;
+      z-index: 100;
+      background: #fff;
+    }
+
+    .nav-name {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+
+    .subtitle {
+      font-size: 0.75rem;
+      color: #888;
+      margin-top: 0.3rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover { color: #888; }
+
+    /* FILTERS */
+    .filters {
+      position: fixed;
+      top: 5.5rem;
+      left: 2.5rem;
+      display: flex;
+      gap: 2rem;
+      z-index: 99;
+      background: #fff;
+      padding-bottom: 0.5rem;
+    }
+
+    .filter-btn {
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      color: #888;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+
+    .filter-btn:hover { color: #1a1a1a; }
+    .filter-btn.active { color: #1a1a1a; }
+
+    /* GALLERY */
+    .gallery {
+      padding-top: 9rem;
+      padding-bottom: 6rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .project {
+      width: min(620px, 90vw);
+      margin-bottom: 4rem;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+
+    .project.hidden-project {
+      display: none;
+    }
+
+    .image-stack {
+      position: relative;
+      width: 100%;
+    }
+
+    .image-stack > * {
+      width: 100%;
+      display: block;
+      transition: opacity 0.5s ease;
+    }
+
+    .image-stack > *:not(:first-child) {
+      position: absolute;
+      top: 0; left: 0;
+    }
+
+    .image-stack > *.hidden { opacity: 0; pointer-events: none; }
+    .image-stack > *.visible { opacity: 1; }
+
+    .placeholder {
+      aspect-ratio: 4/3;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+    }
+
+    .project-caption {
+      margin-top: 0.6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .project-title {
+      font-size: 0.78rem;
+      color: #1a1a1a;
+    }
+
+    .project-location {
+      font-size: 0.72rem;
+      color: #888;
+    }
+
+    .project::after {
+      content: '↻';
+      position: absolute;
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div>
+      <a class="nav-name" href="index.html">yasmine kaci chaouche</a>
+      <p class="subtitle">a collection of works / moments</p>
+    </div>
+    <ul class="nav-links">
+      <li><a href="works.html">works</a></li>
+      <li><a href="cv.html">cv</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="filters">
+    <button class="filter-btn active" onclick="filter('all', this)">all</button>
+    <button class="filter-btn" onclick="filter('architecture', this)">architecture</button>
+    <button class="filter-btn" onclick="filter('scenography', this)">scenography & design</button>
+    <button class="filter-btn" onclick="filter('personal', this)">personal projects</button>
+  </div>
+
+  <main class="gallery">
+
+    <!-- ARCHITECTURE -->
+
+    <div class="project" data-category="architecture" onclick="toggleImages(this)">
+      <div class="image-stack">
+        <div class="placeholder visible" style="background:#e8e6e0;">okada house — image 1</div>
+        <div class="placeholder hidden" style="background:#dddbd5;">okada house — image 2</div>
+      </div>
+      <div class="project-caption">
+        <span class="project-title">Okada House</span>
+        <span class="project-location">Saku, Nagano</span>
+      </div>
+    </div>
+
+    <div class="project" data-category="architecture" onclick="toggleImages(this)">
+      <div class="image-stack">
+        <div class="placeholder visible" style="background:#e4e2dc;">la machine du dialogue — image 1</div>
+        <div class="placeholder hidden" style="background:#d9d7d1;">la machine du dialogue — image 2</div>
+      </div>
+      <div class="project-caption">
+        <span class="project-title">La machine du dialogue</span>
+        <span class="project-location">Montparnasse-Maine, Paris</span>
+      </div>
+    </div>
+
+    <div class="project" data-category="architecture" onclick="toggleImages(this)">
+      <div class="image-stack">
+        <div class="placeholder visible" style="background:#e0deda;">théâtre madeleine — image 1</div>
+        <div class="placeholder hidden" style="background:#d5d3cf;">théâtre madeleine — image 2</div>
+      </div>
+      <div class="project-caption">
+        <span class="project-title">Un théâtre pour la vallée de la Madeleine</span>
+        <span class="project-location">Nice, France</span>
+      </div>
+    </div>
+
+    <div class="project" data-category="architecture" onclick="toggleImages(this)">
+      <div class="image-stack">
+        <div class="placeholder visible" style="background:#dcdad4;">mer baltique — image 1</div>
+        <div class="placeholder hidden" style="background:#d1cfca;">mer baltique — image 2</div>
+      </div>
+      <div class="project-caption">
+        <span class="project-title">Un projet pour la mer Baltique</span>
+        <span class="project-location">Hanko, Finlande</span>
+      </div>
+    </div>
+
+    <div class="project" data-category="architecture" onclick="toggleImages(this)">
+      <div class="image-stack">
+        <div class="placeholder visible" style="background:#d8d6d0;">canal ourcq — image 1</div>
+        <div class="placeholder hidden" style="background:#cdcbc6;">canal ourcq — image 2</div>
+      </div>
+      <div class="project-caption">
+        <span class="project-title">Une place sur l'eau</span>
+        <span class="project-location">Canal de l'Ourcq, Paris</span>
+      </div>
+    </div>
+
+    <div class="project" data-category="architecture" onclick="toggleImages(this)">
+      <div class="image-stack">
+        <div class="placeholder visible" style="background:#d4d2cc;">corps de ferme — image 1</div>
+        <div class="placeholder hidden" style="background:#c9c7c2;">corps de ferme — image 2</div>
+      </div>
+      <div class="project-caption">
+        <span class="project-title">Habiter un corps de ferme</span>
+        <span class="project-location">Domont, Ile de France</span>
+      </div>
+    </div>
+
+    <!-- SCENOGRAPHY & DESIGN -->
+
+    <div class="project" data-category="scenography" onclick="toggleImages(this)">
+      <div class="image-stack">
+        <div class="placeholder visible" style="background:#e6e4de;">legera chaise — image 1</div>
+        <div class="placeholder hidden" style="background:#dbd9d3;">legera chaise — image 2</div>
+      </div>
+      <div class="project-caption">
+        <span class="project-title">Legera chaise</span>
+        <span class="project-location">furniture design</span>
+      </div>
+    </div>
+
+    <div class="project" data-category="scenography" onclick="toggleImages(this)">
+      <div class="image-stack">
+        <div class="placeholder visible" style="background:#e2e0da;">humanitas — image 1</div>
+        <div class="placeholder hidden" style="background:#d7d5cf;">humanitas — image 2</div>
+      </div>
+      <div class="project-caption">
+        <span class="project-title">Humanitas runway</span>
+        <span class="project-location">Paris</span>
+      </div>
+    </div>
+
+    <div class="project" data-category="scenography" onclick="toggleImages(this)">
+      <div class="image-stack">
+        <div class="placeholder visible" style="background:#dedcd6;">helft et pinta — image 1</div>
+        <div class="placeholder hidden" style="background:#d3d1cb;">helft et pinta — image 2</div>
+      </div>
+      <div class="project-caption">
+        <span class="project-title">Palais Galliera exhibition</span>
+        <span class="project-location">Helft et Pinta, Paris</span>
+      </div>
+    </div>
+
+    <!-- PERSONAL PROJECTS -->
+
+    <div class="project" data-category="personal" onclick="toggleImages(this)">
+      <div class="image-stack">
+        <div class="placeholder visible" style="background:#e0deda;">photographs — image 1</div>
+        <div class="placeholder hidden" style="background:#d5d3cf;">photographs — image 2</div>
+      </div>
+      <div class="project-caption">
+        <span class="project-title">photographs</span>
+        <span class="project-location">a collection of moments in space</span>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    function filter(category, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.project').forEach(p => {
+        if (category === 'all' || p.dataset.category === category) {
+          p.classList.remove('hidden-project');
+        } else {
+          p.classList.add('hidden-project');
+        }
+      });
+    }
+
+    function toggleImages(item) {
+      const images = item.querySelectorAll('.image-stack > *');
+      let currentIndex = 0;
+      images.forEach((img, i) => {
+        if (img.classList.contains('visible')) currentIndex = i;
+      });
+      const nextIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].classList.remove('visible');
+      images[currentIndex].classList.add('hidden');
+      images[nextIndex].classList.remove('hidden');
+      images[nextIndex].classList.add('visible');
+    }
+  </script>
+
+</body>
+</html>
