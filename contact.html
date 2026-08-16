@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>contact — yasmine kaci chaouche</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      background: #ffffff;
+      color: #1a1a1a;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 2rem 2.5rem;
+      z-index: 100;
+    }
+
+    .nav-name {
+      font-size: 0.85rem;
+      font-family: Arial, sans-serif;
+      font-weight: 400;
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+
+    .subtitle {
+      font-size: 0.75rem;
+      color: #888;
+      margin-top: 0.3rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover { color: #888; }
+
+    .contact-page {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem 2.5rem;
+    }
+
+    .contact-info {
+      margin-top: 2rem;
+    }
+
+    .contact-info a {
+      display: block;
+      font-size: 0.9rem;
+      color: #1a1a1a;
+      text-decoration: none;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.02em;
+    }
+
+    .contact-info a:hover { color: #888; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div>
+      <a class="nav-name" href="index.html">yasmine kaci chaouche</a>
+      <p class="subtitle">a collection of works / moments</p>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html#works">works</a></li>
+      <li><a href="index.html#cv">cv</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="contact-page">
+    <div class="contact-info">
+      <a href="mailto:yasminekacic@gmail.com">yasminekacic@gmail.com</a>
+      <a href="tel:+33617075901">06 17 07 59 01</a>
+    </div>
+  </main>
+
+</body>
+</html>
