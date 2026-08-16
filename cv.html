@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cv — yasmine kaci chaouche</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      background: #ffffff;
+      color: #1a1a1a;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 2rem 2.5rem;
+      z-index: 100;
+      background: #fff;
+    }
+
+    .nav-name {
+      font-size: 0.85rem;
+      font-family: Arial, sans-serif;
+      font-weight: 400;
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+
+    .subtitle {
+      font-size: 0.75rem;
+      color: #888;
+      margin-top: 0.3rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover { color: #888; }
+
+    /* CV LAYOUT */
+    .cv-page {
+      padding: 8rem 2.5rem 6rem;
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .col { display: flex; flex-direction: column; gap: 2rem; }
+
+    .intro p {
+      font-size: 0.82rem;
+      line-height: 1.7;
+      color: #444;
+      margin-bottom: 1rem;
+    }
+
+    .info {
+      font-size: 0.78rem;
+      line-height: 1.9;
+      color: #555;
+    }
+
+    .info a {
+      color: #1a1a1a;
+      text-decoration: underline;
+    }
+
+    h2 {
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: #888;
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+    }
+
+    .section { display: flex; flex-direction: column; gap: 0.5rem; }
+
+    .entry {
+      font-size: 0.78rem;
+      line-height: 1.7;
+      color: #1a1a1a;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    .entry:last-child { border-bottom: none; }
+
+    .entry .date {
+      color: #888;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .entry em { font-style: italic; }
+
+    .skills-block { font-size: 0.78rem; line-height: 1.9; color: #1a1a1a; }
+    .skills-block strong { font-weight: 700; display: block; margin-top: 1rem; margin-bottom: 0.2rem; }
+    .skills-block strong:first-child { margin-top: 0; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div>
+      <a class="nav-name" href="index.html">yasmine kaci chaouche</a>
+      <p class="subtitle">a collection of works / moments</p>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html#works">works</a></li>
+      <li><a href="cv.html">cv</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="cv-page">
+
+    <!-- COL 1 : intro + skills -->
+    <div class="col">
+      <div class="intro">
+        <h2>resume</h2>
+        <p>This portfolio is a selection of works from my school years and my personal experiences. I gathered the projects which best represents my work and my posture towards architecture and the world.</p>
+      </div>
+
+      <div class="info">
+        <a href="mailto:yasminekacic@gmail.com">yasminekacic@gmail.com</a><br>
+        ADE graduated Jan 2026<br>
+        ENSA PARIS BELLEVILLE<br>
+        FRANCE
+      </div>
+
+      <div class="skills-block">
+        <strong>softwares & skills</strong>
+        autocad, archicad<br>
+        adobe suite<br>
+        blender, rhino, sketchup<br>
+        handmade model making
+
+        <strong>spoken languages</strong>
+        french — native<br>
+        english, spanish — bilingual<br>
+        japanese, korean — intermediate
+
+        <strong>interests</strong>
+        photography,<br>
+        writing, drawing<br>
+        volunteering
+      </div>
+    </div>
+
+    <!-- COL 2 : work experience -->
+    <div class="col">
+      <h2>work experience</h2>
+      <div class="section">
+
+        <div class="entry">
+          <span class="date">Now</span>
+          Organizing a triangular student's workshop in Seoul between ENSA-PB (Paris), Hanyang University (Seoul), and Shibaura IT (Tokyo)
+        </div>
+
+        <div class="entry">
+          <span class="date">July — August 2026</span>
+          Scenography museum design at <em>Helft et Pinta</em><br>
+          Competition for a temporary exhibition at Palais Galliera, Paris, France
+        </div>
+
+        <div class="entry">
+          <span class="date">October 2025</span>
+          Scenography of <em>Humanitas</em> collective runway show, Paris, France
+        </div>
+
+        <div class="entry">
+          <span class="date">May — July 2025</span>
+          Internship at <em>Unemori Architects</em><br>
+          Tokyo, Japan
+        </div>
+
+        <div class="entry">
+          <span class="date">2025</span>
+          Volunteering at <em>La Corvée</em>, associative community space<br>
+          Paris, France
+        </div>
+
+        <div class="entry">
+          <span class="date">June — Août 2024</span>
+          Internship at <em>OCWA Architects</em><br>
+          Marbella, Spain
+        </div>
+
+        <div class="entry">
+          <span class="date">June — July 2023</span>
+          Internship at <em>ACP Architecture</em><br>
+          Paris, France
+        </div>
+
+      </div>
+    </div>
+
+    <!-- COL 3 : education -->
+    <div class="col">
+      <h2>education</h2>
+      <div class="section">
+
+        <div class="entry">
+          <span class="date">Jan 2024 — Jan 2026</span>
+          Masters Degree in Architecture, école nationale supérieure d'architecture de paris-belleville<br>
+          Paris, France
+        </div>
+
+        <div class="entry">
+          <span class="date">Sept 2023 — Jan 2024</span>
+          Exchange semester at KTH University<br>
+          Stockholm, Sweden
+        </div>
+
+        <div class="entry">
+          <span class="date">Sept 2020 — June 2023</span>
+          Bachelor Degree in Architecture, école nationale supérieure d'architecture de paris-belleville<br>
+          Paris, France
+        </div>
+
+        <div class="entry">
+          <span class="date">June 2020</span>
+          High school graduation Baccalauréat économique et social with mentions, mathematics speciality<br>
+          Notre Dame de France highschool, Paris, France
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+</body>
+</html>
