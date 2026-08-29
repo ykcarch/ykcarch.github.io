@@ -183,107 +183,190 @@
 
     <!-- ARCHITECTURE -->
 
-    <div class="project" data-category="architecture" onclick="toggleImages(this)">
-      <div class="image-stack">
-        <img src="images/OKADA 1.png" class="visible" style="width:100%; display:block;">
-        <img src="images/OKADA 4.png" class="hidden" style="width:100%; display:block; position:absolute; top:0; left:0;">
-        <img src="images/OKADA 3.png" class="hidden" style="width:100%; display:block; position:absolute; top:0; left:0;">
-        <img src="images/OKADA 5.png" class="hidden" style="width:100%; display:block; position:absolute; top:0; left:0;">
-        <img src="images/OKADA 6.png" class="hidden" style="width:100%; display:block; position:absolute; top:0; left:0;">
+    <div class="project" data-category="architecture" style="display:flex; gap:2rem; width:min(900px, 90vw); cursor:default;">
+      <div style="flex:1; cursor:pointer;" onclick="toggleImages(this.parentElement.querySelector('.image-stack'))">
+        <div class="image-stack">
+          <img src="images/OKADA 1.png" class="visible" style="width:100%; display:block;">
+          <img src="images/OKADA 4.png" class="hidden" style="width:100%; display:block; position:absolute; top:0; left:0;">
+          <img src="images/OKADA 3.png" class="hidden" style="width:100%; display:block; position:absolute; top:0; left:0;">
+          <img src="images/OKADA 5.png" class="hidden" style="width:100%; display:block; position:absolute; top:0; left:0;">
+          <img src="images/OKADA 6.png" class="hidden" style="width:100%; display:block; position:absolute; top:0; left:0;">
+        </div>
+        <div class="project-caption">
+          <span class="project-title">Okada House</span>
+          <span class="project-location">Saku, Nagano</span>
+        </div>
       </div>
-      <div class="project-caption">
-        <span class="project-title">Okada House</span>
-        <span class="project-location">Saku, Nagano</span>
-      </div>
-    </div>
-
-    <div class="project" data-category="architecture" onclick="toggleImages(this)">
-      <div class="image-stack">
-        <div class="placeholder visible" style="background:#e4e2dc;">la machine du dialogue — image 1</div>
-        <div class="placeholder hidden" style="background:#d9d7d1;">la machine du dialogue — image 2</div>
-      </div>
-      <div class="project-caption">
-        <span class="project-title">La machine du dialogue</span>
-        <span class="project-location">Montparnasse-Maine, Paris</span>
+      <div style="flex:1; font-size:0.75rem; line-height:1.8; color:#555; padding-top:0.5rem;">
+        During my internship at Unemori Architects in Tokyo, I had the opportunity to take part in a participatory construction project in Saku, Nagano Prefecture. Together with members of the agency and with the help of the residents, the Okada family, we built a pergola around their house, which had also previously been designed by the agency.
+        <br><br>
+        The pergola was constructed using metal posts typically used as supports for agricultural greenhouses, while the roof covering was made from bleached bamboo, tied together with ropes. With the support of the Okada family, the construction process took place over one week and allowed the family to significantly reduce costs by using affordable agricultural materials.
+        <br><br>
+        This way of working, building together with the family through low-cost and participatory solutions, was particularly enriching for me.
       </div>
     </div>
 
-    <div class="project" data-category="architecture" onclick="toggleImages(this)">
-      <div class="image-stack">
-        <div class="placeholder visible" style="background:#e0deda;">théâtre madeleine — image 1</div>
-        <div class="placeholder hidden" style="background:#d5d3cf;">théâtre madeleine — image 2</div>
+    <div class="project" data-category="architecture" style="display:flex; gap:2rem; width:min(900px, 90vw); cursor:default;">
+      <div style="flex:1; cursor:pointer;" onclick="toggleImages(this.parentElement.querySelector('.image-stack'))">
+        <div class="image-stack">
+          <div class="placeholder visible" style="background:#e4e2dc;">la machine du dialogue — image 1</div>
+          <div class="placeholder hidden" style="background:#d9d7d1;">la machine du dialogue — image 2</div>
+        </div>
+        <div class="project-caption">
+          <span class="project-title">La machine du dialogue</span>
+          <span class="project-location">Montparnasse-Maine, Paris</span>
+        </div>
       </div>
-      <div class="project-caption">
-        <span class="project-title">Un théâtre pour la vallée de la Madeleine</span>
-        <span class="project-location">Nice, France</span>
-      </div>
-    </div>
-
-    <div class="project" data-category="architecture" onclick="toggleImages(this)">
-      <div class="image-stack">
-        <div class="placeholder visible" style="background:#dcdad4;">mer baltique — image 1</div>
-        <div class="placeholder hidden" style="background:#d1cfca;">mer baltique — image 2</div>
-      </div>
-      <div class="project-caption">
-        <span class="project-title">Un projet pour la mer Baltique</span>
-        <span class="project-location">Hanko, Finlande</span>
-      </div>
-    </div>
-
-    <div class="project" data-category="architecture" onclick="toggleImages(this)">
-      <div class="image-stack">
-        <div class="placeholder visible" style="background:#d8d6d0;">canal ourcq — image 1</div>
-        <div class="placeholder hidden" style="background:#cdcbc6;">canal ourcq — image 2</div>
-      </div>
-      <div class="project-caption">
-        <span class="project-title">Une place sur l'eau</span>
-        <span class="project-location">Canal de l'Ourcq, Paris</span>
+      <div style="flex:1; font-size:0.75rem; line-height:1.8; color:#555; padding-top:0.5rem;">
+        La machine du dialogue emerges from the ambition to transform the Maine Montparnasse shopping centre, a consumerist remnant, into a civic infrastructure dedicated to exchange and engagement.
+        <br><br>
+        Rather than erasing this ruin-like architecture inherited from the Trente Glorieuses, the project chooses to graft itself onto it, preserving its essential structure while subverting its commercial logic. A place once based on consumption is replaced by a place based on speech, encounter, and the collective production of ideas.
+        <br><br>
+        Organised around a citizens' assembly composed of randomly selected participants and experts, the project is accompanied by thematic pavilions hosting exhibitions, workshops, and discussion spaces open to the public, while also integrating the existing facilities.
+        <br><br>
+        The architecture is based on the removal of commercial partitions, the introduction of natural light, and the creation of spatial continuities that encourage exchange and coexistence. By replacing commercial exchange with the exchange of ideas, the project asserts the role of architecture as a support for a new collective space at the heart of the city.
       </div>
     </div>
 
-    <div class="project" data-category="architecture" onclick="toggleImages(this)">
-      <div class="image-stack">
-        <div class="placeholder visible" style="background:#d4d2cc;">corps de ferme — image 1</div>
-        <div class="placeholder hidden" style="background:#c9c7c2;">corps de ferme — image 2</div>
+    <div class="project" data-category="architecture" style="display:flex; gap:2rem; width:min(900px, 90vw); cursor:default;">
+      <div style="flex:1; cursor:pointer;" onclick="toggleImages(this.parentElement.querySelector('.image-stack'))">
+        <div class="image-stack">
+          <div class="placeholder visible" style="background:#e0deda;">théâtre madeleine — image 1</div>
+          <div class="placeholder hidden" style="background:#d5d3cf;">théâtre madeleine — image 2</div>
+        </div>
+        <div class="project-caption">
+          <span class="project-title">Un théâtre pour la vallée de la Madeleine</span>
+          <span class="project-location">Nice, France</span>
+        </div>
       </div>
-      <div class="project-caption">
-        <span class="project-title">Habiter un corps de ferme</span>
-        <span class="project-location">Domont, Ile de France</span>
+      <div style="flex:1; font-size:0.75rem; line-height:1.8; color:#555; padding-top:0.5rem;">
+        This particular project was developed as part of a studio that combined architecture with video and scenography projects. The goal was to introduce cultural facilities (such as an urban theater) and associated public spaces into the Vallée de la Madeleine district in Nice, an area that is heavily urbanized between the two slopes of the valley, which connects the mountains to the sea.
+        <br><br>
+        The project is located at the entrance to the valley, in a complex site where the railway and the expressway cross over a bridge, with an automotive intersection below it and a run-down gymnasium.
+        <br><br>
+        The objective was to clarify this urban situation by freeing up space for soft circulation and by making use of certain site elements framing this entry point into the valley, aiming to achieve a real transformation of the place. The theater program was interpreted by repurposing the existing gymnasium, revealing its structure to transform it into an open, adaptable space for cultural activities, while still maintaining its sporting function.
+      </div>
+    </div>
+
+    <div class="project" data-category="architecture" style="display:flex; gap:2rem; width:min(900px, 90vw); cursor:default;">
+      <div style="flex:1; cursor:pointer;" onclick="toggleImages(this.parentElement.querySelector('.image-stack'))">
+        <div class="image-stack">
+          <div class="placeholder visible" style="background:#dcdad4;">mer baltique — image 1</div>
+          <div class="placeholder hidden" style="background:#d1cfca;">mer baltique — image 2</div>
+        </div>
+        <div class="project-caption">
+          <span class="project-title">Un projet pour la mer Baltique</span>
+          <span class="project-location">Hanko, Finlande</span>
+        </div>
+      </div>
+      <div style="flex:1; font-size:0.75rem; line-height:1.8; color:#555; padding-top:0.5rem;">
+        This project was elaborated during my exchange semester in KTH University in Stockholm, Sweden. The studio Offshore focused on the Baltic Sea and its bordering countries. We each became experts on a certain theme regarding this territory and had to develop a project related to our research.
+        <br><br>
+        This project focused on the existing small-scale fishing industry on the Baltic sea, and about all the shore territories bordering this sea, that seemed left out because of this unsuccessful business. The small-scale fisheries of nowadays are mostly abandoned and so we focused on finding such territories and implementing architecture responses that could help revive them.
+        <br><br>
+        The project contains 2 interventions : a community center for a fishing village community and a landscape project along the natural shore. They are both situated in the city of Hanko, Finland, which used to thrive off this industry.
+      </div>
+    </div>
+
+    <div class="project" data-category="architecture" style="display:flex; gap:2rem; width:min(900px, 90vw); cursor:default;">
+      <div style="flex:1; cursor:pointer;" onclick="toggleImages(this.parentElement.querySelector('.image-stack'))">
+        <div class="image-stack">
+          <div class="placeholder visible" style="background:#d8d6d0;">canal ourcq — image 1</div>
+          <div class="placeholder hidden" style="background:#cdcbc6;">canal ourcq — image 2</div>
+        </div>
+        <div class="project-caption">
+          <span class="project-title">Une place sur l'eau</span>
+          <span class="project-location">Canal de l'Ourcq, Paris</span>
+        </div>
+      </div>
+      <div style="flex:1; font-size:0.75rem; line-height:1.8; color:#555; padding-top:0.5rem;">
+        The project ought to be a three branched wood bridge above at the intersection of the Ourcq and Saint-Denis canals. It follows the continuity of a linear promenade along the Canal de l'Ourcq but also creates a new transversal flow.
+        <br><br>
+        The main goal is to connect the three quays, unequally accessible today, while taking advantage of the space to enjoy a break. To cross without intermediate supports, the bridge adopts the logic of a reciprocal structure: 3 warren lattice beams in glued laminated timber with uprights, assembled together, each starting from a quay.
+        <br><br>
+        At the intersection, a surface is generated, the place above the water. The static height of the trellis induces two accessible levels: a belvedere open to the landscape at the top and a space centered on itself at the bottom. The progression towards the bridge offers a pleasant walk, arranged according to the situation of the quay, where squares are arranged with seats and landscaping treatments without hindering pedestrian traffic.
+      </div>
+    </div>
+
+    <div class="project" data-category="architecture" style="display:flex; gap:2rem; width:min(900px, 90vw); cursor:default;">
+      <div style="flex:1; cursor:pointer;" onclick="toggleImages(this.parentElement.querySelector('.image-stack'))">
+        <div class="image-stack">
+          <div class="placeholder visible" style="background:#d4d2cc;">corps de ferme — image 1</div>
+          <div class="placeholder hidden" style="background:#c9c7c2;">corps de ferme — image 2</div>
+        </div>
+        <div class="project-caption">
+          <span class="project-title">Habiter un corps de ferme</span>
+          <span class="project-location">Domont, Ile de France</span>
+        </div>
+      </div>
+      <div style="flex:1; font-size:0.75rem; line-height:1.8; color:#555; padding-top:0.5rem;">
+        The project ought to be a refurbishing project of a former farm situated in the city of Domont, north of Paris, which is a rather rural city accessible by train from the capital.
+        <br><br>
+        The main goal is to use the existing typology of a farm, which has a central courtyard and access to nearby nature, to develop a form of collective housing, diverse in its forms and its inhabitants. The existing buildings are going to be transformed but the main footprints of the houses are kept, as well as their structure. Two buildings in wood structure are added and some elements are removed.
+        <br><br>
+        The program contains collective areas as well as private areas. A common kitchen is added in the center of the courtyard to symbolize the potential gathering that may take place there. This project ought to offer diverse activities as well as housing, such as gardening, a commercial area, a library, common rooms and develop the relationship of living with the surrounding nature.
       </div>
     </div>
 
     <!-- SCENOGRAPHY & DESIGN -->
 
-    <div class="project" data-category="scenography" onclick="toggleImages(this)">
-      <div class="image-stack">
-        <div class="placeholder visible" style="background:#e6e4de;">legera chaise — image 1</div>
-        <div class="placeholder hidden" style="background:#dbd9d3;">legera chaise — image 2</div>
+    <div class="project" data-category="scenography" style="display:flex; gap:2rem; width:min(900px, 90vw); cursor:default;">
+      <div style="flex:1; cursor:pointer;" onclick="toggleImages(this.parentElement.querySelector('.image-stack'))">
+        <div class="image-stack">
+          <div class="placeholder visible" style="background:#e6e4de;">legera chaise — image 1</div>
+          <div class="placeholder hidden" style="background:#dbd9d3;">legera chaise — image 2</div>
+        </div>
+        <div class="project-caption">
+          <span class="project-title">Legera chaise</span>
+          <span class="project-location">furniture design</span>
+        </div>
       </div>
-      <div class="project-caption">
-        <span class="project-title">Legera chaise</span>
-        <span class="project-location">furniture design</span>
-      </div>
-    </div>
-
-    <div class="project" data-category="scenography" onclick="toggleImages(this)">
-      <div class="image-stack">
-        <div class="placeholder visible" style="background:#e2e0da;">humanitas — image 1</div>
-        <div class="placeholder hidden" style="background:#d7d5cf;">humanitas — image 2</div>
-      </div>
-      <div class="project-caption">
-        <span class="project-title">Humanitas runway</span>
-        <span class="project-location">Paris</span>
+      <div style="flex:1; font-size:0.75rem; line-height:1.8; color:#555; padding-top:0.5rem;">
+        This semester-long furniture workshop aims to build a chair following the analysis of a rudimentary model built in planks and assembled using nails and screws, by Enzo Mari in his 'autoprogettazione' project.
+        <br><br>
+        This project allows us to revisit and interpret this chair model in a lighter version, with an original and reworked assembly logic, while keeping the main proportions of the model. All of this is made following the principles of an industrialized design object, which has to be simple and follow a clear logic. We designed a prototype chair in poplar wood, for its lightness and its clear appearance, favoring the softness of the line, and the common vocabulary of all the pieces.
+        <br><br>
+        Particular attention was paid to the visual importance of continuity, exalted by the roundings and interior assemblies, that are not visible, in comparison from the model that had very sharp and numerous protruding parts that weren't optimizing one's comfort when sitting on it.
       </div>
     </div>
 
-    <div class="project" data-category="scenography" onclick="toggleImages(this)">
-      <div class="image-stack">
-        <div class="placeholder visible" style="background:#dedcd6;">helft et pinta — image 1</div>
-        <div class="placeholder hidden" style="background:#d3d1cb;">helft et pinta — image 2</div>
+    <div class="project" data-category="scenography" style="display:flex; gap:2rem; width:min(900px, 90vw); cursor:default;">
+      <div style="flex:1; cursor:pointer;" onclick="toggleImages(this.parentElement.querySelector('.image-stack'))">
+        <div class="image-stack">
+          <div class="placeholder visible" style="background:#e2e0da;">humanitas — image 1</div>
+          <div class="placeholder hidden" style="background:#d7d5cf;">humanitas — image 2</div>
+        </div>
+        <div class="project-caption">
+          <span class="project-title">Humanitas runway</span>
+          <span class="project-location">Paris</span>
+        </div>
       </div>
-      <div class="project-caption">
-        <span class="project-title">Palais Galliera exhibition</span>
-        <span class="project-location">Helft et Pinta, Paris</span>
+      <div style="flex:1; font-size:0.75rem; line-height:1.8; color:#555; padding-top:0.5rem;">
+        In October 2025, I had the opportunity to contribute to the organisation of the Humanitas collective's Winter 2026 collection fashion show as a scenographer.
+        <br><br>
+        The space to be arranged was the chapel of Le 148, a rehabilitated Parisian venue dedicated to events. Our work consisted in organising the room in order to accommodate around 300 people and to propose a strategic runway for the models between the backstage area and the main hall. On the day of the event, we coordinated its smooth running.
+        <br><br>
+        The positioning of the seating, cameras, and lighting was designed in relation to the models' runway path, emphasising the existing qualities of the space. The chapel's large entrance door became the point from which the models appeared. They walked towards the choir, where musicians accompanied them, before leaving the room. The monumental intrinsic atmosphere of the space was used and staged to host this moment.
+      </div>
+    </div>
+
+    <div class="project" data-category="scenography" style="display:flex; gap:2rem; width:min(900px, 90vw); cursor:default;">
+      <div style="flex:1; cursor:pointer;" onclick="toggleImages(this.parentElement.querySelector('.image-stack'))">
+        <div class="image-stack">
+          <div class="placeholder visible" style="background:#dedcd6;">helft et pinta — image 1</div>
+          <div class="placeholder hidden" style="background:#d3d1cb;">helft et pinta — image 2</div>
+        </div>
+        <div class="project-caption">
+          <span class="project-title">Palais Galliera exhibition</span>
+          <span class="project-location">Helft et Pinta, Paris</span>
+        </div>
+      </div>
+      <div style="flex:1; font-size:0.75rem; line-height:1.8; color:#555; padding-top:0.5rem;">
+        During my internship at Helft et Pinta in the summer of 2026, I participated in the design of a scenography proposal for a temporary fashion exhibition at the Palais Galliera, the museum of fashion of the city of Paris.
+        <br><br>
+        The project involved imagining a spatial narrative that would guide visitors through the exhibition while responding to the existing architecture of the museum. The design sought to create an intimate yet open experience, where the display of garments and objects would be enhanced by the scenographic choices of lighting, materials, and circulation.
+        <br><br>
+        This experience introduced me to the intersection of architecture, fashion, and museum design, and deepened my interest in the relationship between space and cultural objects.
       </div>
     </div>
 
@@ -316,7 +399,8 @@
     }
 
     function toggleImages(item) {
-      const images = item.querySelectorAll('.image-stack > *');
+      const stack = item.classList.contains('image-stack') ? item : item.querySelector('.image-stack');
+      const images = stack.querySelectorAll('img, .placeholder');
       let currentIndex = 0;
       images.forEach((img, i) => {
         if (img.classList.contains('visible')) currentIndex = i;
