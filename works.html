@@ -82,7 +82,6 @@
     .filter-btn:hover { color: #1a1a1a; }
     .filter-btn.active { color: #1a1a1a; }
 
-    /* GALLERY */
     .gallery {
       padding-top: 10rem;
       padding-bottom: 6rem;
@@ -93,8 +92,9 @@
     }
 
     .project {
-      display: grid;
-      grid-template-columns: 1fr 500px 260px 1fr;
+      display: flex;
+      gap: 3rem;
+      justify-content: center;
       width: 100%;
       align-items: start;
       cursor: default;
@@ -103,14 +103,15 @@
     .project.hidden-project { display: none; }
 
     .project-left {
-      grid-column: 2;
+      width: 440px;
+      flex-shrink: 0;
       cursor: pointer;
     }
 
     .project-right {
-      grid-column: 3;
+      width: 240px;
+      flex-shrink: 0;
       padding-top: 0.5rem;
-      padding-left: 2.5rem;
     }
 
     .image-stack {
