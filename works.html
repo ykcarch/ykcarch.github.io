@@ -60,7 +60,6 @@
 
     .nav-links a:hover { color: #888; }
 
-    /* FILTERS */
     .filters {
       display: flex;
       justify-content: space-between;
@@ -90,44 +89,28 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 5rem;
+      gap: 6rem;
     }
 
     .project {
-      display: flex;
-      gap: 3rem;
-      width: min(960px, 92vw);
-      align-items: flex-start;
+      display: grid;
+      grid-template-columns: 1fr 500px 260px 1fr;
+      width: 100%;
+      align-items: start;
       cursor: default;
     }
 
+    .project.hidden-project { display: none; }
+
     .project-left {
-      flex: 0 0 480px;
+      grid-column: 2;
       cursor: pointer;
     }
 
     .project-right {
-      flex: 0 0 280px;
+      grid-column: 3;
       padding-top: 0.5rem;
-    }
-
-    .project-name {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 0.3rem;
-    }
-
-    .project-loc {
-      font-size: 0.72rem;
-      color: #888;
-      margin-bottom: 1rem;
-    }
-
-    .project-text {
-      font-size: 0.75rem;
-      line-height: 1.8;
-      color: #555;
+      padding-left: 2.5rem;
     }
 
     .image-stack {
@@ -154,37 +137,27 @@
     .image-stack > *.visible { opacity: 1; }
 
     .placeholder {
-      aspect-ratio: 4/3;
       width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #aaa;
-      font-size: 0.75rem;
-      letter-spacing: 0.04em;
+      height: 100%;
     }
 
-    .project-caption {
-      margin-top: 0.6rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-    }
-
-    .project-title {
-      font-size: 0.78rem;
+    .project-name {
+      font-size: 1rem;
+      font-weight: 700;
       color: #1a1a1a;
+      margin-bottom: 0.3rem;
     }
 
-    .project-location {
+    .project-loc {
       font-size: 0.72rem;
       color: #888;
+      margin-bottom: 1rem;
     }
 
-    .project::after {
-      content: '↻';
-      position: absolute;
-      opacity: 0;
+    .project-text {
+      font-size: 0.75rem;
+      line-height: 1.8;
+      color: #555;
     }
   </style>
 </head>
@@ -218,10 +191,10 @@
       <div class="project-left" onclick="toggleImages(this.querySelector('.image-stack'))">
         <div class="image-stack">
           <img src="images/OKADA 1.png" class="visible">
-          <img src="images/OKADA 4.png" class="hidden" style="position:absolute; top:0; left:0;">
-          <img src="images/OKADA 3.png" class="hidden" style="position:absolute; top:0; left:0;">
-          <img src="images/OKADA 5.png" class="hidden" style="position:absolute; top:0; left:0;">
-          <img src="images/OKADA 6.png" class="hidden" style="position:absolute; top:0; left:0;">
+          <img src="images/OKADA 4.png" class="hidden">
+          <img src="images/OKADA 3.png" class="hidden">
+          <img src="images/OKADA 5.png" class="hidden">
+          <img src="images/OKADA 6.png" class="hidden">
         </div>
       </div>
       <div class="project-right">
@@ -297,7 +270,7 @@
       <div class="project-right">
         <p class="project-name">Habiter un corps de ferme</p>
         <p class="project-loc">Domont, Ile de France</p>
-        <p class="project-text">The project ought to be a refurbishing project of a former farm situated in the city of Domont, north of Paris, which is a rather rural city accessible by train from the capital.<br><br>The main goal is to use the existing typology of a farm, which has a central courtyard and access to nearby nature, to develop a form of collective housing, diverse in its forms and its inhabitants. The existing buildings are going to be transformed but the main footprints of the houses are kept, as well as their structure. Two buildings in wood structure are added and some elements are removed. </p>
+        <p class="project-text">The project ought to be a refurbishing project of a former farm situated in the city of Domont, north of Paris, which is a rather rural city accessible by train from the capital.<br><br>The main goal is to use the existing typology of a farm, which has a central courtyard and access to nearby nature, to develop a form of collective housing, diverse in its forms and its inhabitants. The existing buildings are going to be transformed but the main footprints of the houses are kept, as well as their structure. Two buildings in wood structure are added and some elements are removed.</p>
       </div>
     </div>
 
@@ -313,7 +286,7 @@
       <div class="project-right">
         <p class="project-name">Legera chaise</p>
         <p class="project-loc">furniture design</p>
-        <p class="project-text">This semester-long furniture workshop aims to build a chair following the analysis of a rudimentary model built in planks and assembled using nails and screws, by Enzo Mari in his 'autoprogettazione' project.<br><br>This project allows us to revisit and interpret this chair model in a lighter version, with an original and reworked assembly logic, while keeping the main proportions of the model. We designed a prototype chair in poplar wood, for its lightness and its clear appearance, favoring the softness of the line, and the common vocabulary of all the pieces.<br><br>Particular attention was paid to the visual importance of continuity, exalted by the roundings and interior assemblies, that are not visible, in comparison from the model that had very sharp and numerous protruding parts that weren't optimizing one's comfort when sitting on it.</p>
+        <p class="project-text">This semester-long furniture workshop aims to build a chair following the analysis of a rudimentary model built in planks and assembled using nails and screws, by Enzo Mari in his 'autoprogettazione' project.<br><br>This project allows us to revisit and interpret this chair model in a lighter version, with an original and reworked assembly logic, while keeping the main proportions of the model. We designed a prototype chair in poplar wood, for its lightness and its clear appearance, favoring the softness of the line, and the common vocabulary of all the pieces.<br><br>Particular attention was paid to the visual importance of continuity, exalted by the roundings and interior assemblies.</p>
       </div>
     </div>
 
@@ -327,7 +300,7 @@
       <div class="project-right">
         <p class="project-name">Humanitas runway</p>
         <p class="project-loc">Paris, 2025</p>
-        <p class="project-text">In October 2025, I had the opportunity to contribute to the organisation of the Humanitas collective's Winter 2026 collection fashion show as a scenographer.<br><br>The space to be arranged was the chapel of Le 148, a rehabilitated Parisian venue dedicated to events. Our work consisted in organising the room in order to accommodate around 300 people and to propose a strategic runway for the models between the backstage area and the main hall.<br><br>The positioning of the seating, cameras, and lighting was designed in relation to the models' runway path, emphasising the existing qualities of the space. The chapel's large entrance door became the point from which the models appeared. They walked towards the choir, where musicians accompanied them, before leaving the room. The monumental intrinsic atmosphere of the space was used and staged to host this moment.</p>
+        <p class="project-text">In October 2025, I had the opportunity to contribute to the organisation of the Humanitas collective's Winter 2026 collection fashion show as a scenographer.<br><br>The space to be arranged was the chapel of Le 148, a rehabilitated Parisian venue dedicated to events. Our work consisted in organising the room in order to accommodate around 300 people and to propose a strategic runway for the models between the backstage area and the main hall.<br><br>The positioning of the seating, cameras, and lighting was designed in relation to the models' runway path, emphasising the existing qualities of the space. The monumental intrinsic atmosphere of the space was used and staged to host this moment.</p>
       </div>
     </div>
 
@@ -341,7 +314,7 @@
       <div class="project-right">
         <p class="project-name">Palais Galliera exhibition</p>
         <p class="project-loc">Helft et Pinta, Paris, 2026</p>
-        <p class="project-text">During my internship at Helft et Pinta in the summer of 2026, I participated in the design of a scenography proposal for a temporary fashion exhibition at the Palais Galliera, the museum of fashion of the city of Paris.<br><br>The project involved imagining a spatial narrative that would guide visitors through the exhibition while responding to the existing architecture of the museum. The design sought to create an intimate yet open experience, where the display of garments and objects would be enhanced by the scenographic choices of lighting, materials, and circulation.<br><br>This experience introduced me to the intersection of architecture, fashion, and museum design, and deepened my interest in the relationship between space and cultural objects.</p>
+        <p class="project-text">During my internship at Helft et Pinta in the summer of 2026, I participated in the design of a scenography proposal for a temporary fashion exhibition at the Palais Galliera, the museum of fashion of the city of Paris.<br><br>The project involved imagining a spatial narrative that would guide visitors through the exhibition while responding to the existing architecture of the museum. The design sought to create an intimate yet open experience, where the display of garments and objects would be enhanced by the scenographic choices of lighting, materials, and circulation.</p>
       </div>
     </div>
 
@@ -376,8 +349,7 @@
       });
     }
 
-    function toggleImages(item) {
-      const stack = item.classList.contains('image-stack') ? item : item.querySelector('.image-stack');
+    function toggleImages(stack) {
       const images = stack.querySelectorAll('img, .placeholder');
       let currentIndex = 0;
       images.forEach((img, i) => {
