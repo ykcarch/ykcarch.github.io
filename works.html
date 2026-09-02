@@ -116,7 +116,6 @@
     .image-stack {
       position: relative;
       width: 100%;
-      aspect-ratio: 1;
       overflow: hidden;
     }
 
@@ -135,6 +134,16 @@
 
     .image-stack > *.hidden { opacity: 0; pointer-events: none; }
     .image-stack > *.visible { opacity: 1; }
+
+    .image-stack.square {
+      aspect-ratio: 1;
+    }
+
+    .image-stack.natural > img:first-child {
+      object-fit: contain;
+      position: relative;
+      height: auto;
+    }
 
     .placeholder {
       width: 100%;
@@ -189,7 +198,7 @@
 
     <div class="project" data-category="architecture">
       <div class="project-left" onclick="toggleImages(this.querySelector('.image-stack'))">
-        <div class="image-stack">
+        <div class="image-stack square">
           <img src="images/OKADA 1.png" class="visible">
           <img src="images/OKADA 4.png" class="hidden">
           <img src="images/OKADA 3.png" class="hidden">
@@ -206,16 +215,16 @@
 
     <div class="project" data-category="architecture">
       <div class="project-left" onclick="toggleImages(this.querySelector('.image-stack'))">
-        <div class="image-stack">
-          <img src="images/c 1.png" class="visible">
-          <img src="images/c 2.png" class="hidden">
-          <img src="images/c 3.png" class="hidden">
-          <img src="images/C 4.jpg" class="hidden">
-          <img src="images/C 5.PNG" class="hidden">
-          <img src="images/C 6.PNG" class="hidden">
-          <img src="images/C 7.PNG" class="hidden">
-          <img src="images/C 8.PNG" class="hidden">
-          <img src="images/C 10.jpg" class="hidden">
+        <div class="image-stack" style="aspect-ratio: auto;">
+          <img src="images/c 1.png" class="visible" style="width:100%; display:block; object-fit:contain; position:relative; height:auto;">
+          <img src="images/c 2.png" class="hidden" style="aspect-ratio:1; object-fit:cover; position:absolute; top:0; left:0; height:100%;">
+          <img src="images/c 3.png" class="hidden" style="aspect-ratio:1; object-fit:cover; position:absolute; top:0; left:0; height:100%;">
+          <img src="images/C 4.jpg" class="hidden" style="aspect-ratio:1; object-fit:cover; position:absolute; top:0; left:0; height:100%;">
+          <img src="images/C 5.PNG" class="hidden" style="aspect-ratio:1; object-fit:cover; position:absolute; top:0; left:0; height:100%;">
+          <img src="images/C 6.PNG" class="hidden" style="aspect-ratio:1; object-fit:cover; position:absolute; top:0; left:0; height:100%;">
+          <img src="images/C 7.PNG" class="hidden" style="aspect-ratio:1; object-fit:cover; position:absolute; top:0; left:0; height:100%;">
+          <img src="images/C 8.PNG" class="hidden" style="aspect-ratio:1; object-fit:cover; position:absolute; top:0; left:0; height:100%;">
+          <img src="images/C 10.jpg" class="hidden" style="aspect-ratio:1; object-fit:cover; position:absolute; top:0; left:0; height:100%;">
         </div>
       </div>
       <div class="project-right">
@@ -227,7 +236,7 @@
 
     <div class="project" data-category="architecture">
       <div class="project-left" onclick="toggleImages(this.querySelector('.image-stack'))">
-        <div class="image-stack">
+        <div class="image-stack square">
           <div class="placeholder visible" style="background:#e0deda;"></div>
           <div class="placeholder hidden" style="background:#d5d3cf;"></div>
         </div>
@@ -241,7 +250,7 @@
 
     <div class="project" data-category="architecture">
       <div class="project-left" onclick="toggleImages(this.querySelector('.image-stack'))">
-        <div class="image-stack">
+        <div class="image-stack square">
           <div class="placeholder visible" style="background:#dcdad4;"></div>
           <div class="placeholder hidden" style="background:#d1cfca;"></div>
         </div>
@@ -255,7 +264,7 @@
 
     <div class="project" data-category="architecture">
       <div class="project-left" onclick="toggleImages(this.querySelector('.image-stack'))">
-        <div class="image-stack">
+        <div class="image-stack square">
           <div class="placeholder visible" style="background:#d8d6d0;"></div>
           <div class="placeholder hidden" style="background:#cdcbc6;"></div>
         </div>
@@ -269,7 +278,7 @@
 
     <div class="project" data-category="architecture">
       <div class="project-left" onclick="toggleImages(this.querySelector('.image-stack'))">
-        <div class="image-stack">
+        <div class="image-stack square">
           <div class="placeholder visible" style="background:#d4d2cc;"></div>
           <div class="placeholder hidden" style="background:#c9c7c2;"></div>
         </div>
@@ -285,7 +294,7 @@
 
     <div class="project" data-category="scenography">
       <div class="project-left" onclick="toggleImages(this.querySelector('.image-stack'))">
-        <div class="image-stack">
+        <div class="image-stack square">
           <div class="placeholder visible" style="background:#e6e4de;"></div>
           <div class="placeholder hidden" style="background:#dbd9d3;"></div>
         </div>
@@ -299,7 +308,7 @@
 
     <div class="project" data-category="scenography">
       <div class="project-left" onclick="toggleImages(this.querySelector('.image-stack'))">
-        <div class="image-stack">
+        <div class="image-stack square">
           <div class="placeholder visible" style="background:#e2e0da;"></div>
           <div class="placeholder hidden" style="background:#d7d5cf;"></div>
         </div>
@@ -313,7 +322,7 @@
 
     <div class="project" data-category="scenography">
       <div class="project-left" onclick="toggleImages(this.querySelector('.image-stack'))">
-        <div class="image-stack">
+        <div class="image-stack square">
           <div class="placeholder visible" style="background:#dedcd6;"></div>
           <div class="placeholder hidden" style="background:#d3d1cb;"></div>
         </div>
@@ -329,7 +338,7 @@
 
     <div class="project" data-category="personal">
       <div class="project-left" onclick="toggleImages(this.querySelector('.image-stack'))">
-        <div class="image-stack">
+        <div class="image-stack square">
           <div class="placeholder visible" style="background:#e0deda;"></div>
           <div class="placeholder hidden" style="background:#d5d3cf;"></div>
         </div>
